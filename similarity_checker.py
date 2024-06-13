@@ -1,0 +1,2 @@
+class Similarity:
+    pass
