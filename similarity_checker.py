@@ -8,6 +8,11 @@ class SimilarityChecker:
     def get_length_score(self, first, second):
         if len(first) == len(second):
             return 60
+        if first < second:
+            first, second = second, first
+        if len(first) >= len(second) * 2:
+            return 0
+
 
     def assert_illegal_argument(self, first, second):
         return not isinstance(first, str) or not isinstance(second, str)
