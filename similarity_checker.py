@@ -8,10 +8,12 @@ class SimilarityChecker:
     def get_length_score(self, first, second):
         if len(first) == len(second):
             return 60
-        if first < second:
+        if len(first) < len(second):
             first, second = second, first
         if len(first) >= len(second) * 2:
             return 0
+
+        return int((1 - (len(first) - len(second)) / len(second)) * 60)
 
 
     def assert_illegal_argument(self, first, second):
