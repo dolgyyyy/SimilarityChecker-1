@@ -1,6 +1,12 @@
 from unittest import TestCase
 
+from similarity_checker import SimilarityChecker
 
-class TestSimilarity(TestCase):
-    def test_similarity_checker(self):
-        self.assertEqual(1, 1)
+
+class TestSimilarityChecker(TestCase):
+    def setUp(self):
+        super().setUp()
+        self.similarity_checker = SimilarityChecker()
+
+    def test_get_score(self):
+        self.assertEqual(self.similarity_checker.get_score("ABCDE", "ABCDE"), 100)
