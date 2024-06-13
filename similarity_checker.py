@@ -12,9 +12,10 @@ class SimilarityChecker:
             first, second = second, first
         if len(first) >= len(second) * 2:
             return 0
+        return self.get_length_partial_score(first, second)
 
+    def get_length_partial_score(self, first, second):
         return int((1 - (len(first) - len(second)) / len(second)) * 60)
-
 
     def assert_illegal_argument(self, first, second):
         return not isinstance(first, str) or not isinstance(second, str)
