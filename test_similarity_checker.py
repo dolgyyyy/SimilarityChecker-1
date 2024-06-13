@@ -27,5 +27,6 @@ class TestSimilarityChecker(TestCase):
         self.assertEqual(self.similarity_checker.get_score("ABCDE", "ABCDE"), 100)
 
     def test_get_lenth_score(self):
-        pass
+        self.assertEqual(self.similarity_checker.get_length_score("ASD", "DSA"), 60)
+
 
